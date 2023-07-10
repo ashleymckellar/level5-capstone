@@ -6,7 +6,7 @@ const sauceSchema = new Schema({
         type: String,
         rquired: true
     },
-    heatLevel: Number
+    // heatLevel: Number
     
 })
 

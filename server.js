@@ -14,6 +14,9 @@ const Cat = mongoose.model('Cat', { name: String });
 const kitty = new Cat({ name: 'Zildjian' });
 kitty.save().then(() => console.log('meow'));// Saves to mongoDB and console.logs('meow') to verify that it is connected to mongoDB
 
+//middleware
+app.use("/sauces", require("./routes/sauceRouter.js"))
+
 //Error handler/s
 app.use((error, request, response, next) => { 
     console.log(error)
