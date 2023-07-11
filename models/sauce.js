@@ -18,6 +18,9 @@ const sauceSchema = new Schema({
     },
     ingredients: {
         type: String
+    },
+    imageUrl: {
+        type: String
     }
 });
 
