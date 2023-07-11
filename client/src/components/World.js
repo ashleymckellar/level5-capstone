@@ -14,6 +14,7 @@ const navigate = useNavigate();
         <button onClick={() => navigate("/")}>Home</button>
         <button onClick={() => navigate(-1)}>Go backwards</button>
         <button onClick={() => navigate(1)}>Go forward 1</button>
+        <button onClick={() => navigate("/form")}>Submit New Sauce</button>
 
         </>
     )
