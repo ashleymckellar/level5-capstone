@@ -3,19 +3,19 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-function List(){
+function List() {
 
-const navigate = useNavigate();
+    const navigate = useNavigate();
 
-    return(
+    return (
         <>
-        <h1>LIST</h1>
+            <h1>LIST</h1>
 
-
-        <button onClick={() => navigate("/")}>Home</button>
-        <button onClick={() => navigate(-1)}>Go backwards</button>
-        <button onClick={() => navigate(1)}>Go forward 1</button>
-
+            <div className='navigate-buttons'>
+                <button className="navigate-buttons"  onClick={() => navigate("/")}>Home</button>
+                <button className="navigate-buttons"  onClick={() => navigate(-1)}>Go backward</button>
+                <button className="navigate-buttons"  onClick={() => navigate(1)}>Go forward</button>
+            </div>
         </>
     )
 };
