@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
@@ -6,22 +6,19 @@ import axios from 'axios'
 
 function SauceList(props) {
 
-
     const navigate = useNavigate();
 
     return (
-        <div>
+        <>
             <h1>Sauces</h1>
-            {/* HAVE the hot sauces display */}
-            <h1>brand name:{props.name}</h1>
-            <p>Scoville rating:{props.heatRating}</p>
-
-            <button onClick={() => navigate("/")}>Home</button>
-            <button onClick={() => navigate(-1)}>Go backwards</button>
-            <button onClick={() => navigate(1)}>Go forward 1</button>
-
-        </div>
-
+<h1>{props.name}</h1>
+<p>{props.heatRating}</p>
+            <div className='navigate-buttons'>
+                <button className="navigate-buttons"  onClick={() => navigate("/")}>Home</button>
+                <button className="navigate-buttons"  onClick={() => navigate(-1)}>Go backward</button>
+                <button className="navigate-buttons"  onClick={() => navigate(1)}>Go forward</button>
+            </div>
+        </>
     )
 };
 
