@@ -66,5 +66,21 @@ sauceRouter.delete("/:sauceId", (request, response, next) => {
     })
 })
 
+//UPDATE one
+sauceRouter.put("/:sauceId", (req, res, next) => {
+    Sauce.findOneAndUpdate(
+        {_id: req.params.sauceId} ,
+        req.body,
+        { new: true, runValidators: true }
+    )
+        .then(updatedSauce => {
+            res.status(200).json(updatedSauce)
+            })
+        .catch(err => {
+            res.status(500);
+            return next(err)
+        })
+    })
+    
 
 module.exports = sauceRouter;
