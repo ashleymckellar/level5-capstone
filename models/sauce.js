@@ -4,14 +4,14 @@ const Schema = mongoose.Schema
 const sauceSchema = new Schema({
     name: {
         type: String,
-        rquired: true
+        required: true
     },
     heatRating: {
         type: Number
     },
     origin: {
         type: String,
-        require: true
+        required: true
     },
     description: {
         type: String
