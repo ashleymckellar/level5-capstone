@@ -9,13 +9,12 @@ function World() {
 
     return (
         <>
-            <>WORLDLY</>
+        <>WORLDLY</>
 
-            <div>
-                <button className="navigate-buttons" onClick={() => navigate("/")}>Home</button>
-                <button className="navigate-buttons"  onClick={() => navigate(-1)}>Go backward</button>
-                <button className="navigate-buttons"  onClick={() => navigate(1)}>Go forward</button>
-            </div>
+        <button onClick={() => navigate("/")}>Home</button>
+        <button onClick={() => navigate(-1)}>Go backwards</button>
+        <button onClick={() => navigate(1)}>Go forward 1</button>
+        <button onClick={() => navigate("/form")}>Submit New Sauce</button>
         </>
     )
 }

@@ -3,8 +3,7 @@ import React, { useState } from 'react'
 
 
 function Form(props){
-    
-        const initInputs = { name: props.name || "", origin: props.origin || ""}
+    const initInputs = { name: props.name || "", origin: props.origin || ""}
     const [ inputs, setInputs ] = useState(initInputs)
 
     const handleChange = (e) => {
@@ -34,11 +33,7 @@ function Form(props){
             placeholder="Origin" />
             <button>{props.btnText}</button>
 
-
-
-
-
-        </form>
+        </form>     
     )
 };
 

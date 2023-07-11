@@ -19,6 +19,9 @@ function Home() {
             <Link to="world" style={{ padding: 5 }}>
                 Worldly Hot Sauce
             </Link>
+            <Link to="form" style={{ padding: 5 }}>
+                Submit New Sauce
+            </Link>
 
             <div className="navigate-buttons">
                 <button className="navigate-buttons"  onClick={() => navigate("/")}>Home</button>
