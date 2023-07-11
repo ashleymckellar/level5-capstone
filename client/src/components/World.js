@@ -1,16 +1,15 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 
 
-function List(){
+function World(){
 
 const navigate = useNavigate();
 
     return(
         <>
-        <h1>LIST</h1>
-
+        <>WORLDLY</>
 
         <button onClick={() => navigate("/")}>Home</button>
         <button onClick={() => navigate(-1)}>Go backwards</button>
@@ -18,8 +17,11 @@ const navigate = useNavigate();
 
         </>
     )
-};
+}
+
+
+export default World;
 
 
 
-export default List;
+///WORLDLY hot sauce - china, brazile, whereever- min 5

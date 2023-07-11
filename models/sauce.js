@@ -6,9 +6,20 @@ const sauceSchema = new Schema({
         type: String,
         rquired: true
     },
-    heatLevel: Number
-    
-})
+    heatRating: {
+        type: Number
+    },
+    origin: {
+        type: String,
+        require: true
+    },
+    description: {
+        type: String
+    },
+    ingredients: {
+        type: String
+    }
+});
 
 
-module.exports = mongoose.model("Sauce", sauceSchema)
+module.exports = mongoose.model("Sauce", sauceSchema);
