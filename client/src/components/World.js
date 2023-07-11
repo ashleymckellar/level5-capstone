@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 
 
 
-function World(){
+function World() {
 
-const navigate = useNavigate();
+    const navigate = useNavigate();
 
-    return(
+    return (
         <>
         <>WORLDLY</>
 
@@ -15,7 +15,6 @@ const navigate = useNavigate();
         <button onClick={() => navigate(-1)}>Go backwards</button>
         <button onClick={() => navigate(1)}>Go forward 1</button>
         <button onClick={() => navigate("/form")}>Submit New Sauce</button>
-
         </>
     )
 }

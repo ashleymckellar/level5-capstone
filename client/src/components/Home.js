@@ -9,7 +9,7 @@ function Home() {
 
     return (
         <>
-        <h1>HOME</h1>
+            <h1>HOME</h1>
             <Link to="/" style={{ padding: 5 }}>
                 Home
             </Link>
@@ -23,11 +23,11 @@ function Home() {
                 Submit New Sauce
             </Link>
 
-
-            <button onClick={() => navigate("/")}>Home</button>
-        <button onClick={() => navigate(-1)}>Go backwards</button>
-        <button onClick={() => navigate(1)}>Go forward 1</button>
-
+            <div className="navigate-buttons">
+                <button className="navigate-buttons"  onClick={() => navigate("/")}>Home</button>
+                <button className="navigate-buttons"  onClick={() => navigate(-1)}>Go backward</button>
+                <button className="navigate-buttons"  onClick={() => navigate(1)}>Go forward</button>
+            </div>
         </>
     )
 };

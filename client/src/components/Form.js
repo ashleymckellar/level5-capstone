@@ -33,13 +33,7 @@ function Form(props){
             placeholder="Origin" />
             <button>{props.btnText}</button>
 
-
-
-
-
-        </form>
-        
-        
+        </form>     
     )
 };
 
