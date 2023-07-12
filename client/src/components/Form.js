@@ -1,23 +1,43 @@
 import React, { useState } from 'react'
+import Navbar from './Navbar.js'
+import axios from "axios"
 
 
 
 function Form(props){
     const initInputs = { name: props.name || "", origin: props.origin || ""}
     const [ inputs, setInputs ] = useState(initInputs)
+    const [sauces, setSauces] = useState([])
 
     const handleChange = (e) => {
         const { name, origin } = e.target
         setInputs(prevInputs => ({...prevInputs, [name]: origin}))
     }
 
+    // const handleSubmit = (e) => {
+    //     e.preventDefault()
+    //     props.submit(inputs, props._id)
+    //     setInputs(initInputs)
+    // }
+
     const handleSubmit = (e) => {
-        e.preventDefault()
-        props.submit(inputs, props._id)
-        setInputs(initInputs)
+        e.preventDefault();
+        addSauce(inputs)
     }
 
-    return(
+    const addSauce = (newSauce) => {
+        axios.post("/sauces", newSauce)
+        .then(res => {
+            setSauces(prevSauces => [...prevSauces, res.data])
+        })
+        .catch(err => console.log(err))
+    }
+
+    return (
+        <div>
+        
+    
+        
         <form onSubmit={handleSubmit}>
             <input 
             type="text"
@@ -31,11 +51,12 @@ function Form(props){
             value={inputs.origin}
             onChange={handleChange}
             placeholder="Origin" />
-            <button>{props.btnText}</button>
+            <button>Submit</button>
 
-        </form>     
+        </form>  
+    </div>   
     )
-};
+    }
 
 
 export default Form;

@@ -1,6 +1,7 @@
 .navigate-buttons {
   border: none;
   border-radius: 12px;
+  text-decoration: none;
   width: 80px;
   height: 30px;
   border-color: #FFB45C;
