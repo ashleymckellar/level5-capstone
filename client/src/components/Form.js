@@ -34,11 +34,7 @@ function Form(props) {
                 onChange={handleChange}
                 placeholder="Origin" />
             <button>{props.btnText}</button>
-
         </form>
-
-
-        </form>     
     )
 };
 
