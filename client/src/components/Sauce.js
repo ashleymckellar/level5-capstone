@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Form from '.Form'
+import Form from './Form'
 
 export default function Sauce(props) {
     const { name, origin, _id } = props

@@ -10,8 +10,8 @@ function Form(props){
     const [sauces, setSauces] = useState([])
 
     const handleChange = (e) => {
-        const { name, origin } = e.target
-        setInputs(prevInputs => ({...prevInputs, [name]: origin}))
+        const { name, value } = e.target
+        setInputs(prevInputs => ({...prevInputs, [name]: value}))
     }
 
     // const handleSubmit = (e) => {
@@ -24,6 +24,8 @@ function Form(props){
         e.preventDefault();
         addSauce(inputs)
     }
+
+    console.log(sauces)
 
     const addSauce = (newSauce) => {
         axios.post("/sauces", newSauce)
