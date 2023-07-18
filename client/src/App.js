@@ -27,7 +27,7 @@ function App() {
     console.log(newSauce)
     axios.post("/sauces", newSauce)
       .then(response => {
-          setHotSauces(prevHotSauces => [...prevHotSauces, response.data])
+          getSauce()
       })
       .catch(error => console.log(error))
 }
@@ -49,7 +49,7 @@ useEffect(()=> {
           <Route path="/" element={<Home />} />
           <Route path="/saucelist" element={<SauceListContainer hotSauces={hotSauces} setHotSauces={setHotSauces} getSauce={getSauce}/>} />
           <Route path="/world" element={<World />} />
-          <Route path="/form" element={<Form setHotSauces={setHotSauces} newSauce={newSauce} hotSauces={hotSauces} addSauce={addSauce} />} />
+          <Route path="/form" element={<Form newSauce={newSauce} addSauce={addSauce} />} />
           <Route path="/sauce/:sauceId" element={<Sauce />} />
         </Routes>
       </Router>

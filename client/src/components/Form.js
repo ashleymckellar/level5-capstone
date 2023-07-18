@@ -17,14 +17,10 @@ function Form(props) {
     //     setInputs(initInputs)
     // }
 
+    console.log(inputs)
     const handleSubmit = (e) => {
         e.preventDefault()
-        // props.setNewSauce({name: "hot", origin: "usa"})
-        props.setHotSauces((prevHotSauces) =>{
-            console.log(prevHotSauces)
-            return [...prevHotSauces, newSauce]
-        })
-        addSauce()
+        props.addSauce(inputs)
     };
 
     console.log(hotSauces)
