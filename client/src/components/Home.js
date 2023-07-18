@@ -10,16 +10,16 @@ function Home() {
     return (
         <>
             <h1>HOME</h1>
-            <Link to="/" style={{ padding: 5 }}>
+            <Link to="/" style={{ padding: 5 }} className='navigate-buttons'>
                 Home
             </Link>
             <Link to="/saucelist" style={{ padding: 5 }}>
                 Sauce List
             </Link>
-            <Link to="world" style={{ padding: 5 }}>
+            <Link to="world" style={{ padding: 5 }}className='navigate-buttons'>
                 Worldly Hot Sauce
             </Link>
-            <Link to="form" style={{ padding: 5 }}>
+            <Link to="form" style={{ padding: 5 }}className='navigate-buttons'>
                 Submit New Sauce
             </Link>
 
