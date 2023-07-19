@@ -18,7 +18,7 @@ sauceRouter.get("/", (request, response, next) => {
             response.status(500)
             return next(error)
         })
-})
+});
 
 //GET One
 sauceRouter.get("/:sauceId", (request, response, next) => {
@@ -40,6 +40,33 @@ sauceRouter.get("/:sauceId", (request, response, next) => {
 sauceRouter.post("/", (request, response, next) => {
     const newSauce = new Sauce(request.body)
     newSauce
+        .save()
+        .then(savedSauce => {
+            return response.status(200).send(savedSauce)
+        })
+        .catch(error => {
+            response.status(500)
+            return next(error)
+        })
+});
+
+//GET foreign sauces
+sauceRouter.get("/world", (request, response, next) => {
+    Sauce.find()
+        .exec()
+        .then(sauce => {
+            return response.status(200).send(sauce)
+        })
+        .catch(error => {
+            response.status(500)
+            return next(error)
+        })
+});
+
+// POST foreign sauces
+sauceRouter.post("/world", (request, response, next) => {
+    const newForeignSauce = new Sauce(request.body)
+    newForeignSauce
         .save()
         .then(savedSauce => {
             return response.status(200).send(savedSauce)
