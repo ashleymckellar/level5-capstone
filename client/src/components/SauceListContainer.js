@@ -4,7 +4,7 @@ import SauceList from "./SauceList";
 
 function SauceListContainer(props) {
 
-    const { newSauce, hotSauces, setHotSauces, getSauce } = props
+    const { hotSauces, setHotSauces, getSauce } = props
 
     useEffect(() => {
         getSauce();

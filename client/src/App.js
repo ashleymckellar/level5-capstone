@@ -87,7 +87,7 @@ useEffect(()=> {
           {/* OC world saucelist */}
           <Route path="/world" element={<WorldSauceContainer foreignSauce={foreignSauce} setForeignSauce={setForeignSauce} getForeignSauce={getForeignSauce}/>} /> 
           {/* OC  world*/}
-          <Route path="/form" element={<Form newSauce={newSauce} addSauce={addSauce} />} />
+          <Route path="/form" element={<Form newSauce={newSauce} addSauce={addSauce} getSauce={getSauce} hotSauces={hotSauces}/>} />
           <Route path="/sauce/:sauceId" element={<Sauce />} />
         </Routes>
       </div>
