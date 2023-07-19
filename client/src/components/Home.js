@@ -9,7 +9,7 @@ function Home() {
 
     return (
         <>
-            <h1>HOME</h1>
+            {/* <h1>HOME</h1>
             <Link to="/" style={{ padding: 5 }} className='navigate-buttons'>
                 Home
             </Link>
@@ -21,13 +21,13 @@ function Home() {
             </Link>
             <Link to="form" style={{ padding: 5 }}className='navigate-buttons'>
                 Submit New Sauce
-            </Link>
+            </Link> */}
 
-            <div className="navigate-buttons">
+            {/* <div className="navigate-buttons">
                 <button className="navigate-buttons"  onClick={() => navigate("/")}>Home</button>
                 <button className="navigate-buttons"  onClick={() => navigate(-1)}>Go backward</button>
                 <button className="navigate-buttons"  onClick={() => navigate(1)}>Go forward</button>
-            </div>
+            </div> */}
         </>
     )
 };
