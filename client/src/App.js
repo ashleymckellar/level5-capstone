@@ -67,8 +67,3 @@ useEffect(()=> {
   }
 
 export default App;
-
-
-
-
-//REWRITE into Route        {/* <Route path="/form" element={<Form />} /> */}
