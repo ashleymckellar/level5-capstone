@@ -8,7 +8,6 @@ function SauceListContainer(props) {
 
     useEffect(() => {
         getSauce();
-        
     }, []);
 
     return (

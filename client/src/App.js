@@ -53,9 +53,6 @@ useEffect(()=> {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/saucelist" element={<SauceListContainer hotSauces={hotSauces} setHotSauces={setHotSauces} getSauce={getSauce}/>} />
-          {/* OC world saucelist */}
-          <Route path="/world" element={<WorldSauceContainer foreignSauce={foreignSauce} setForeignSauce={setForeignSauce} getForeignSauce={getForeignSauce}/>} /> 
-          {/* OC  world*/}
           <Route path="/form" element={<Form newSauce={newSauce} addSauce={addSauce} />} />
           <Route path="/sauce/:sauceId" element={<Sauce />} />
         </Routes>
