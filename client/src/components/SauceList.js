@@ -13,7 +13,9 @@ function SauceList(props) {
             <h1>brand name:{props.name}</h1>
             <h4>birth place: {props.origin}</h4>
             <p>Scoville rating:{props.heatRating}</p>
+            <p>{props.description}</p>
             <p>Ingredients: {props.ingredients}</p>
+            <a href={props.imageUrl}>image</a> 
         </div>
     )
 };
