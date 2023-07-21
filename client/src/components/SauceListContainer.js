@@ -4,10 +4,11 @@ import SauceList from "./SauceList";
 
 function SauceListContainer(props) {
 
-    const { newSauce, hotSauces, setHotSauces, getSauce } = props // extracts specific props from Parent -- App.js 
+    const { hotSauces, setHotSauces, getSauce } = props
 
     useEffect(() => {
         getSauce();
+        
     }, []);
 
     return (

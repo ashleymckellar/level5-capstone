@@ -7,9 +7,8 @@ import axios from "axios";
 import Home from './components/Home.js';
 import Form from './components/Form.js';
 import Sauce from "./components/Sauce.js";
-import SauceListContainer from "./components/SauceListContainer";
 import Header from "./components/Header";
-
+import SauceListContainer from "./components/SauceListContainer.js"
 
 function App() {
 
@@ -54,6 +53,9 @@ useEffect(()=> {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/saucelist" element={<SauceListContainer hotSauces={hotSauces} setHotSauces={setHotSauces} getSauce={getSauce}/>} />
+          {/* OC world saucelist */}
+          <Route path="/world" element={<WorldSauceContainer foreignSauce={foreignSauce} setForeignSauce={setForeignSauce} getForeignSauce={getForeignSauce}/>} /> 
+          {/* OC  world*/}
           <Route path="/form" element={<Form newSauce={newSauce} addSauce={addSauce} />} />
           <Route path="/sauce/:sauceId" element={<Sauce />} />
         </Routes>
