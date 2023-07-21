@@ -23,6 +23,7 @@ function App() {
         .catch(error => console.log(error));
   }
 
+  console.log(typeof getSauce)
 // POST adds one
   function addSauce(newSauce) {
     console.log(newSauce)
@@ -53,7 +54,7 @@ useEffect(()=> {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/saucelist" element={<SauceListContainer hotSauces={hotSauces} setHotSauces={setHotSauces} getSauce={getSauce}/>} />
-          <Route path="/form" element={<Form newSauce={newSauce} addSauce={addSauce} />} />
+          <Route path="/form" element={<Form newSauce={newSauce} addSauce={addSauce} getSauce={getSauce} hotSauces={hotSauces}/>} />
           <Route path="/sauce/:sauceId" element={<Sauce />} />
         </Routes>
       </div>

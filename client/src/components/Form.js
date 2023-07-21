@@ -37,12 +37,13 @@ function Form(props) {
         setInputs({ name: "", 
                     heatRating: "", 
                     origin:  "",  
-                    description:  "", 
+                    description:  "",  
                     ingredients: "", 
                     imgUrl:  ""});
         
     };
 
+    console.log(typeof getSauce)
     const regex = /^[0-9]+$/;
     const isDisabled = !(inputs.name && inputs.origin && regex.test(inputs.heatRating))
    
