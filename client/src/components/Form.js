@@ -3,7 +3,7 @@ import SauceList from "./SauceList"
 
 function Form(props) {
 
-    const initInputs = { name: props.name || "", heatRating: props.heatRating || "", origin: props.origin || "",  description: props.description || "", ingredients: props.ingredients || "", imgUrl: props.imgUrl || ""}; //PUT/Update 
+    const initInputs = { name: props.name || "", heatRating: props.heatRating || "", origin: props.origin || "",  description: props.description || "", ingredients: props.ingredients || "", imageUrl: props.imageUrl || ""}; //PUT/Update 
     const [inputs, setInputs] = useState(initInputs);
     const { newSauce, hotSauces, addSauce, getSauce } = props
     const [isSubmitted, setIsSubmitted] = useState(false)
@@ -39,7 +39,7 @@ function Form(props) {
                     origin:  "",  
                     description:  "",  
                     ingredients: "", 
-                    imgUrl:  ""});
+                    imageUrl:  ""});
         
     };
 
@@ -87,8 +87,8 @@ console.log(validationError)
                         placeholder="Ingredients" />
                     <input
                         type="text"
-                        name="imgUrl"
-                        value={inputs.imgUrl}
+                        name="imageUrl"
+                        value={inputs.imageUrl}
                         onChange={handleChange}
                         placeholder="Image URL" />
                         {validationError && <p style={{color: 'red'}}>{validationError}</p>}
