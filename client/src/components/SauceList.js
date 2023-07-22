@@ -15,7 +15,7 @@ function SauceList(props) {
             <p>Scoville rating:{props.heatRating}</p>
             <p>{props.description}</p>
             <p>Ingredients: {props.ingredients}</p>
-            <a href={props.imageUrl}>image</a> 
+            <img src={props.imageUrl}/> 
         </div>
     )
 };
