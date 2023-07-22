@@ -10,21 +10,20 @@ function Header() {
     return (
         <>
             <div className="route-link">
-                <Link to="/" style={{ padding: 5 }} className='navigate-buttons'>
+                <Link to="/">
                     Home
                 </Link>
-                <Link to="/saucelist" style={{ padding: 5 }} className='navigate-buttons'>
+                <Link to="/saucelist">
                     Sauce List
                 </Link>
-                <Link to="form" style={{ padding: 5 }} className='navigate-buttons'>
+                <Link to="form">
                     Submit New Sauce
                 </Link>
             </div>
-
-            <div className="navigate-buttons">
-                <button className="navigate-buttons" onClick={() => navigate("/")}>Home</button>
-                <button className="navigate-buttons" onClick={() => navigate(-1)}>Go backward</button>
-                <button className="navigate-buttons" onClick={() => navigate(1)}>Go forward</button>
+            <div className="my-btn">
+                <button className="my-btn" onClick={() => navigate("/")}>Home</button>
+                <button className="my-btn" onClick={() => navigate(-1)}>Go backward</button>
+                <button className="my-btn" onClick={() => navigate(1)}>Go forward</button>
             </div>
         </>
     )
