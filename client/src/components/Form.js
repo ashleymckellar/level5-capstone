@@ -60,7 +60,7 @@ function Form(props) {
 
     const regex = /^[0-9]+$/;
     const isDisabled = !(inputs.name && inputs.origin && regex.test(inputs.heatRating))
-    // const isError = !(inputs.name && inputs.origin)
+    const isError = !(inputs.name && inputs.origin)
 
     const onBlur = (e)=> {
         
