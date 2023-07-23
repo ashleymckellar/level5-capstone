@@ -1,5 +1,7 @@
 import { React, useState } from 'react';
 import SauceList from "./SauceList"
+import "bootstrap/dist/css/bootstrap.min.css"
+// import { Button } from "react-bootstrap"
 
 function Form(props) {
 
@@ -8,24 +10,37 @@ function Form(props) {
     const { newSauce, hotSauces, addSauce, getSauce } = props
     const [isSubmitted, setIsSubmitted] = useState(false)
     const [validationError, setValidationError] = useState("")
+    const [requiredFieldError, setRequiredFieldError] = useState("")
 
     const handleChange = (e) => {
-        const { name, value } = e.target//
+        const { name, value } = e.target
         
         const regex = /^[0-9]+$/;
+        console.log(name, value)
         if(name === "heatRating" && !regex.test(value)) {
             setValidationError("Please enter a valid number.")
+            setRequiredFieldError("")
             return
         }
-        setValidationError("")
+
+
+    
+        // setValidationError("");
+        //  else if(name === "name" && value === "" || name === "origin" && value === "") 
+        //     {
+        //     setRequiredFieldError("Please enter a value in required fields.")
+        //     setValidationError("")
+        //     console.log("test")
+            
+        //     //return
+        // } else {
+        //     setValidationError("");
+        //     setRequiredFieldError("")
+        // }
         setInputs(prevInputs => ({ ...prevInputs, [name]: value }))
     };
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault()
-    //     props.submit(inputs, props._id)
-    //     setInputs(initInputs)
-    // }
+   
 
     console.log(inputs)
     const handleSubmit = (e) => {
@@ -43,13 +58,21 @@ function Form(props) {
         
     };
 
-    console.log(typeof getSauce)
     const regex = /^[0-9]+$/;
     const isDisabled = !(inputs.name && inputs.origin && regex.test(inputs.heatRating))
-   
-console.log(validationError)
+    const isError = !(inputs.name && inputs.origin)
 
-    console.log(hotSauces)
+    const onBlur = (e)=> {
+        
+        const {name, value} = e.target
+        console.log(name, value)
+        if (value === "") {
+            setRequiredFieldError("Please enter a value in required fields.")
+
+        }
+
+    }
+   
     return (
         <div>
             
@@ -60,6 +83,7 @@ console.log(validationError)
                         name="name"
                         value={inputs.name}
                         onChange={handleChange}
+                        onBlur={onBlur}
                         placeholder="Sauce Brand Name" />
                     <input
                         type="text"
@@ -72,6 +96,7 @@ console.log(validationError)
                         name="origin"
                         value={inputs.origin}
                         onChange={handleChange}
+                        onBlur={onBlur}
                         placeholder="Origin" />
                     <input
                         type="text"
@@ -92,12 +117,13 @@ console.log(validationError)
                         onChange={handleChange}
                         placeholder="Image URL" />
                         {validationError && <p style={{color: 'red'}}>{validationError}</p>}
+                        {isError && <p style={{color: 'red'}}>{requiredFieldError}</p>}
                     <button disabled={isDisabled}>Submit</button>
                 </form>
                 
                 {isSubmitted && (
                     <>
-                        <h1>Thank you for submitting a new sauce!</h1>
+                        <h1 style={{color: 'orange'}}>Thank you for submitting a new sauce!</h1>
                         <h1>Sauces</h1>
                         {hotSauces.map(sauce => (
                     <       SauceList {...sauce} key={sauce._id} />
