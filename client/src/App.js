@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css"
+import { Button } from "react-bootstrap"
+
 
 // Imported Components
 import Home from './components/Home.js';
