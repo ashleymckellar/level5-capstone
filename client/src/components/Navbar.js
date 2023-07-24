@@ -16,6 +16,7 @@ export default function Navbar() {
             <Route path="/list" element={<SauceListContainer />}/>
             <Route path="/world" element={<World />}/>
             <Route path="/form" element={<Form />} />
+            <Route path="/search" element={<Search />} />
           </Routes>
         </Router>
         </>

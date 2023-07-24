@@ -19,6 +19,9 @@ function Header() {
                 <Link to="form">
                     Submit New Sauce
                 </Link>
+                <Link to="search">
+                    Sauce Search
+                </Link>
             </div>
             <div className="my-btn">
                 <button className="my-btn" onClick={() => navigate("/")}>Home</button>
