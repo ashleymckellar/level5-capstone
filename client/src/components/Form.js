@@ -7,9 +7,17 @@ function Form(props) {
     const [inputs, setInputs] = useState(initInputs);
     const { newSauce, hotSauces, addSauce, getSauce } = props
     const [isSubmitted, setIsSubmitted] = useState(false)
+    const [validationError, setValidationError] = useState("")
 
     const handleChange = (e) => {
         const { name, value } = e.target//
+        
+        const regex = /^[0-9]+$/;
+        if(name === "heatRating" && !regex.test(value)) {
+            setValidationError("Please enter a valid number.")
+            return
+        }
+        setValidationError("")
         setInputs(prevInputs => ({ ...prevInputs, [name]: value }))
     };
 
@@ -22,15 +30,28 @@ function Form(props) {
     console.log(inputs)
     const handleSubmit = (e) => {
         e.preventDefault()
+        
         props.addSauce(inputs)
         getSauce()
         setIsSubmitted(true)
+        setInputs({ name: "", 
+                    heatRating: "", 
+                    origin:  "",  
+                    description:  "", 
+                    ingredients: "", 
+                    imgUrl:  ""});
+        
     };
+
+    const regex = /^[0-9]+$/;
+    const isDisabled = !(inputs.name && inputs.origin && regex.test(inputs.heatRating))
+   
+console.log(validationError)
 
     console.log(hotSauces)
     return (
         <div>
-            {!isSubmitted? (
+            
                 <form onSubmit={handleSubmit}>
 
                     <input
@@ -69,15 +90,16 @@ function Form(props) {
                         value={inputs.imgUrl}
                         onChange={handleChange}
                         placeholder="Image URL" />
-                    <button>Submit</button>
+                        {validationError && <p style={{color: 'red'}}>{validationError}</p>}
+                    <button disabled={isDisabled}>Submit</button>
                 </form>
-            ) : (
                 
-                <>
-                <h1>Thank you for submitting a new sauce!</h1>
-                <h1>Sauces</h1>
-                {hotSauces.map(sauce => (
-                    <SauceList {...sauce} key={sauce._id} />
+                {isSubmitted && (
+                    <>
+                        <h1>Thank you for submitting a new sauce!</h1>
+                        <h1>Sauces</h1>
+                        {hotSauces.map(sauce => (
+                    <       SauceList {...sauce} key={sauce._id} />
             ))}
             </>
             )}
@@ -86,8 +108,8 @@ function Form(props) {
     }
 
 // will make the "thank you" message a modal using bootstrap later on
-//also want to add regex validation to the form for the required fields, and to make scoville field to be
-//numeric only.
-//also need to make the form not disappear upon submission, but clear out fields instead 
+//will try to fix issue where form validation error isn't showing up
+
+
 
 export default Form;
