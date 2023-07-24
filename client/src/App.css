@@ -24,5 +24,20 @@ font-size: 1.2rem;
   padding: 5px 20px;
   min-height: 30px;
   min-width: 120px;
+  
+  
 
+}
+.button:hover {
+  background-color: #002ead;
+  transition: 0.7s;
+}
+.navBar{
+
+
+
+  .cardsize {
+    height: 204px;
+}
+  
 }
