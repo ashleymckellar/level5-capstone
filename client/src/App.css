@@ -13,6 +13,9 @@ text-decoration: none;
 height: 40px;
 font-size: 1.2rem;
 }
+.hot-sauce-links{
+  text-decoration: none;
+}
 .my-btn{
   display: flex;
   flex-direction: row;
@@ -37,4 +40,20 @@ font-size: 1.2rem;
     height: 204px;
 }
   
+}
+
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }

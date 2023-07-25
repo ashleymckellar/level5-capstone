@@ -4,6 +4,7 @@ import './App.css';
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Button } from "react-bootstrap"
+import 'react-bootstrap';
 
 
 // Imported Components
