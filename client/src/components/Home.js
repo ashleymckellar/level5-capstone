@@ -15,7 +15,7 @@ function Home() {
             <a href='https://manofmany.com/lifestyle/food/hottest-hot-sauces-in-the-world' className='hot-sauce-links'><li>Hottest of the HOT</li></a>
          </ol>
          <div>
-         <h1>Youtube Embed</h1>
+         <h1>Hot Ones</h1>
          <YoutubeEmbed url={youtubeUrl} />
 </div>
         </>
