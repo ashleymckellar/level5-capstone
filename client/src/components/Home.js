@@ -1,33 +1,23 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-
+import YoutubeEmbed from './YouTube';
 
 
 function Home() {
-
-    const navigate = useNavigate();
+    const youtubeUrl = "https://www.youtube.com/watch?v=_sZH-psg9yE";
 
     return (
         <>
-            {/* <h1>HOME</h1>
-            <Link to="/" style={{ padding: 5 }} className='navigate-buttons'>
-                Home
-            </Link>
-            <Link to="/saucelist" style={{ padding: 5 }}>
-                Sauce List
-            </Link>
-            <Link to="world" style={{ padding: 5 }}className='navigate-buttons'>
-                Worldly Hot Sauce
-            </Link>
-            <Link to="form" style={{ padding: 5 }}className='navigate-buttons'>
-                Submit New Sauce
-            </Link> */}
-
-            {/* <div className="navigate-buttons">
-                <button className="navigate-buttons"  onClick={() => navigate("/")}>Home</button>
-                <button className="navigate-buttons"  onClick={() => navigate(-1)}>Go backward</button>
-                <button className="navigate-buttons"  onClick={() => navigate(1)}>Go forward</button>
-            </div> */}
+         <h1>WORLD of Hot Sauce</h1>
+         <ol>
+            <h1>Hot Sauce links</h1>
+            <a href='https://www.allrecipes.com/most-popular-hot-sauces-in-us-2023-7498923' className='hot-sauce-links'><li>TOP 10 US hot sauce picks</li></a>
+            <a href='https://www.cntraveler.com/story/best-hot-sauces-from-around-the-world' className='hot-sauce-links'><li> Best Hot Sauce from around the world</li></a>
+            <a href='https://manofmany.com/lifestyle/food/hottest-hot-sauces-in-the-world' className='hot-sauce-links'><li>Hottest of the HOT</li></a>
+         </ol>
+         <div>
+         <h1>Youtube Embed</h1>
+         <YoutubeEmbed url={youtubeUrl} />
+</div>
         </>
     )
 };
