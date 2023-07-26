@@ -1,5 +1,9 @@
+// NOT BEING USED BY OSCAR CALLE TO PRESENT - NO BUTTONS on BROWSER
+
+
+
 import React, { useState } from 'react'
-import Form from './Form'
+import Form from './Form' // Form.js 
 import { useNavigate } from 'react-router-dom'
 
 
@@ -8,7 +12,7 @@ export default function Sauce(props) {
 
     const navigate = useNavigate();
 
-    const { name, origin, _id } = props
+    const { name, origin, _id } = props // Imported from Form.js
     const [editToggle, setEditToggle] = useState(false)
 
     return (
@@ -43,10 +47,6 @@ export default function Sauce(props) {
                     </button>
                 </>
             }
-            {/* the 3 buttons below NOT displaying, not sure why */}
-            <button onClick={() => navigate("/")}>Home</button>
-            <button onClick={() => navigate(-1)}>Go backwards</button>
-            <button onClick={() => navigate(1)}>Go forward 1</button>
         </div>
 
     )
